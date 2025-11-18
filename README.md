@@ -5,20 +5,21 @@
 
 
 ## 项目简介
-**功能**：输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。：输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。
+**功能**：输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。
 
-**核心技术**：：
+**核心技术**：
 - SAM：精确分割人像区域（生成掩码）。 SAM：精确分割人像区域（生成掩码）。
 - PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。 PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。
-
-
+## 权重下载
+Download pre-trained VGG19 from Baidu Cloud (access code: pc9y) or Dropbox.
+Our pre-trained model is available on Baidu Cloud (access code: po7q) or Dropbox.
 ## 项目结构
 ```plaintextplaintext
 segment_harmonize_project/
 ├── models/                  
 │   ├── segment-anything/    # SAM官方代码
 │   └── PHDNet/  # PHDNet
-├── checkpoints/             
+├── checkpoints/     #权重放置处        
 │   ├── sam_vit_h_4b8939.pth  
 │   └── vgg_normalised.pth
 │   └── latest_net_G.pth
