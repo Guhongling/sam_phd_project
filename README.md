@@ -15,21 +15,22 @@
 ## 项目结构
 ```plaintextplaintext
 segment_harmonize_project/
-├── models/                  # 模型代码库（需克隆）
+├── models/                  
 │   ├── segment-anything/    # SAM官方代码
-│   └── PHDNet-Painterly-Image-Harmonization/  # PHDNet官方代码
-├── checkpoints/             # 模型权重文件（需下载）
-│   ├── sam_vit_h_4b8939.pth  # SAM的ViT-H权重
-│   └── phdnet_checkpoint.pth  # PHDNet预训练权重（重命名自latest_net_G.pth）
-├── src/                     # 接口封装代码（已提供）
-│   ├── sam_interface.py     # SAM人像分割接口
-│   ├── phdnet_interface.py  # PHDNet风格协调接口
-│   └── combined_interface.py  # 端到端组合接口
-├── images/                  # 测试图像（需自行准备）
-│   ├── portrait.jpg         # 人像原图（输入）
-│   ├── starry_night.jpg     # 油画背景（输入）
-│   └── portrait_in_painting.jpg  # 输出结果（自动生成）
-└── test.py                  # 测试脚本（运行入口）
+│   └── PHDNet/  # PHDNet
+├── checkpoints/             
+│   ├── sam_vit_h_4b8939.pth  
+│   └── vgg_normalised.pth
+│   └── latest_net_G.pth
+│   └── yolov8n.pt
+├── Input_Data/                  
+│   ├── portraits        # 人像原图（输入）
+│   ├── paintings/    # 油画背景（输入）
+├── Output_Results/    
+│
+└──  requirements.txt
+└──  pipeline.py
+└──  main.py      
 ```
 ## 前置要求
 - 操作系统：Linux/macOS/Windows（推荐 Linux，GPU 支持更稳定）
@@ -38,14 +39,7 @@ segment_harmonize_project/
 - 硬件：推荐：NVIDIA GPU（显存≥8GB，支持 CUDA，加速推理)
 ## 安装依赖库
 ```plaintextplaintext
-# 安装基础依赖# 安装基础依赖
-pip install opencv-python numpy torch torchvision matplotlib
-
-# 安装SAM额外依赖
-pip install pycocotools onnxruntime
-
-# 安装PHDNet依赖（使用其官方requirements）
-pip install -r models/PHDNet-Painterly-Image-Harmonization/requirements.txt
+pip install -r requirements.txt
 ```
 ## 使用步骤
 1. 准备测试图像 准备测试图像
