@@ -11,8 +11,10 @@
 - SAM：精确分割人像区域（生成掩码）。 SAM：精确分割人像区域（生成掩码）。
 - PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。 PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。
 ## 权重下载
-Download pre-trained VGG19 from Baidu Cloud (access code: pc9y) or Dropbox.
-Our pre-trained model is available on Baidu Cloud (access code: po7q) or Dropbox.
+Download pre-trained VGG19 from [Baidu Cloud](https://pan.baidu.com/s/1HljOE-4Q2yUeeWmteu0nNA) (access code: pc9y) or [Dropbox](https://www.dropbox.com/scl/fi/vmi4vsg7og41xy8y20j8j/vgg_normalised.pth?rlkey=mbf24da9ac4fnyig1qbkgeem8&st=fjt3274i&dl=0).
+
+Our pre-trained model is available on [Baidu Cloud](https://pan.baidu.com/s/1D6iAS6Sli1QggLp-E9EvyQ) (access code: po7q) or [Dropbox](https://www.dropbox.com/scl/fi/frud0136kx3jizjdkpte0/latest_net_G.pth?rlkey=evhxja7g5vi8ageq7gqhatsxs&st=a1ai0zu5&dl=0).
+
 ## 项目结构
 ```plaintextplaintext
 segment_harmonize_project/
