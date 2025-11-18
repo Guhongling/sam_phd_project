@@ -48,11 +48,12 @@ pip install -r requirements.txt
 油画背景：命名为 starry_night.jpg（建议：油画风格，如梵高、莫奈作品，尺寸与人像图接近）
 2. 运行测试脚本
  ```plaintextplaintext
-python test.py
+python main.py
 ```
 成功运行后，会输出：协调结果已保存到 images/portrait_in_painting.jpg。
 ## 测试结果
-生成的 images/portrait_in_painting.jpg 为融合结果：人像被分割后，与油画背景在颜色、纹理上协调融合，呈现统一的艺术风格。
+生成的 Output_Results/portrait_in_painting.jpg 为融合结果：人像被分割后，与油画背景在颜色、纹理上协调融合，呈现统一的艺术风格。
 ## 参考资源
 https://github.com/facebookresearch/segment-anything
+
 https://github.com/bcmi/PHDNet-Painterly-Image-Harmonization
