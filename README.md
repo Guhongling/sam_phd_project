@@ -1,62 +1,62 @@
 ## sam_phd_project
-## 人像与油画风格融合工具：运行指南 人像与油画风格融合工具：运行指南
+## Portrait and Oil Painting Style Fusion Tool: User Guide
 
-本项目通过 SAM（Segment Anything Model）分割人像，结合 PHDNet 将人像与油画背景自然融合，生成具有艺术风格的合成图像。以下是详细的运行步骤。本项目通过 SAM（Segment Anything Model）分割人像，结合 PHDNet 将人像与油画背景自然融合，生成具有艺术风格的合成图像。以下是详细的运行步骤。
+This project uses SAM (Segment Anything Model) to segment portraits and combines PHDNet to naturally fuse portraits with oil painting backgrounds, generating artistically styled composite images. Below are the detailed operating steps.
 
 
-## 项目简介
-**功能**：输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。输入一张人像图和一幅油画背景，自动分割人像并将其与油画风格协调融合。
+## Project Overview
+**Function**：Input a portrait image and an oil painting background to automatically segment the portrait and harmoniously fuse it with the oil painting style.
 
-**核心技术**：
-- SAM：精确分割人像区域（生成掩码）。 SAM：精确分割人像区域（生成掩码）。
-- PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。 PHDNet：优化人像与油画背景的颜色、纹理一致性，实现自然融合。
-## 权重下载
+**Core Technologies:**：
+- SAM：Precisely segments the portrait area (generates masks).
+- PHDNet：Optimizes the color and texture consistency between the portrait and the oil painting background for natural fusion.
+## Weight Download
 Download pre-trained VGG19 from [Baidu Cloud](https://pan.baidu.com/s/1HljOE-4Q2yUeeWmteu0nNA) (access code: pc9y) or [Dropbox](https://www.dropbox.com/scl/fi/vmi4vsg7og41xy8y20j8j/vgg_normalised.pth?rlkey=mbf24da9ac4fnyig1qbkgeem8&st=fjt3274i&dl=0).
 
 Our pre-trained model is available on [Baidu Cloud](https://pan.baidu.com/s/1D6iAS6Sli1QggLp-E9EvyQ) (access code: po7q) or [Dropbox](https://www.dropbox.com/scl/fi/frud0136kx3jizjdkpte0/latest_net_G.pth?rlkey=evhxja7g5vi8ageq7gqhatsxs&st=a1ai0zu5&dl=0).
 
-## 项目结构
+## Project Structure
 ```plaintextplaintext
 segment_harmonize_project/
 ├── models/                  
-│   ├── segment-anything/    # SAM官方代码
+│   ├── segment-anything/    # SAM official code
 │   └── PHDNet/  # PHDNet
-├── checkpoints/     #权重放置处        
+├── checkpoints/     # Weight storage location       
 │   ├── sam_vit_h_4b8939.pth  
 │   └── vgg_normalised.pth
 │   └── latest_net_G.pth
 │   └── yolov8n.pt
 ├── Input_Data/                  
-│   ├── portraits        # 人像原图（输入）
-│   ├── paintings/    # 油画背景（输入）
+│   ├── portraits        # Original portrait images (input)
+│   ├── paintings/    # Oil painting backgrounds (input)
 ├── Output_Results/    
 │
 └──  requirements.txt
 └──  pipeline.py
 └──  main.py      
 ```
-## 前置要求
-- 操作系统：Linux/macOS/Windows（推荐 Linux，GPU 支持更稳定）
-- Python 版本：3.8+
-- 依赖库：PyTorch（1.10+）、OpenCV、NumPy 等（见下文安装步骤）
-- 硬件：推荐：NVIDIA GPU（显存≥8GB，支持 CUDA，加速推理)
-## 安装依赖库
+## Prerequisites
+- Operating System: Linux/macOS/Windows (Linux recommended for more stable GPU support)
+- Python Version: 3.8+
+- Dependent Libraries: PyTorch (1.10+), OpenCV, NumPy, etc. (see installation steps below)
+- Hardware: Recommended: NVIDIA GPU (VRAM ≥8GB, CUDA-supported for accelerated inference)
+## Install Dependent Libraries
 ```plaintextplaintext
 pip install -r requirements.txt
 ```
-## 使用步骤
-1. 准备测试图像 准备测试图像
-在 images/ 文件夹中放入：
-人像图：命名为 portrait.jpg（建议：人物清晰，背景简单，尺寸≥500x500）
-油画背景：命名为 starry_night.jpg（建议：油画风格，如梵高、莫奈作品，尺寸与人像图接近）
-2. 运行测试脚本
+## Usage Steps
+1. Prepare Test Images
+Place the following in the Input_Data/ folder:
+Portrait image: Named portrait.jpg (Recommendation: Clear subject, simple background, resolution ≥500x500)
+Oil painting background: Named starry_night.jpg (Recommendation: Oil painting style, e.g., works by Van Gogh or Monet, resolution close to the portrait image)
+2. Run the Test Script
  ```plaintextplaintext
 python main.py
 ```
-成功运行后，会输出：协调结果已保存到 images/portrait_in_painting.jpg。
+After successful execution, the output will be: Harmonized result saved to Output_Results/portrait_in_painting.jpg.
 ## 测试结果
-生成的 Output_Results/portrait_in_painting.jpg 为融合结果：人像被分割后，与油画背景在颜色、纹理上协调融合，呈现统一的艺术风格。
-## 参考资源
+The generated Output_Results/portrait_in_painting.jpg is the fusion result. After the portrait is segmented, it is harmoniously fused with the oil painting background in terms of color and texture, presenting a unified artistic style.
+## Reference Resources
 https://github.com/facebookresearch/segment-anything
 
 https://github.com/bcmi/PHDNet-Painterly-Image-Harmonization
